@@ -1,0 +1,23 @@
+{
+  "name": "pluralsight-js-starter-kit",
+  "version": "1.0.0",
+  "description": "Pluralsight course JS starter kit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzdv/pluralsight-js-starter-kit.git"
+  },
+  "keywords": [
+    "starter",
+    "kit"
+  ],
+  "author": "Milos Zivadinovic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mzdv/pluralsight-js-starter-kit/issues"
+  },
+  "homepage": "https://github.com/mzdv/pluralsight-js-starter-kit#readme"
+}
