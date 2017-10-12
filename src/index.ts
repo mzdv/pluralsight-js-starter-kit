@@ -1,1 +1,3 @@
-console.log('This is the starter file')
+export function testFunction(number: Number): Number {
+  return number;
+}
