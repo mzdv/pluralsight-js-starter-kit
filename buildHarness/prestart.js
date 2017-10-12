@@ -1,3 +1,3 @@
-let chalk = require('chalk');
+let chalk = require('chalk')
 
-console.log(chalk.green('Started in dev mode'));
+console.log(chalk.green('Started in dev mode'))
