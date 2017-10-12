@@ -15,7 +15,7 @@
     "compile": "npm-run-all compile:typescript compile:cleanup",
     "compile:cleanup": "rimraf dist/test",
     "test": "nyc --require ts-node/register tape test/**/*.ts | tap-spec",
-    "test:watch": "nyc --require ts-node/register tape-watch test/**/*.ts | tap-spec",
+    "test:watch": "tape-watch --require ts-node/register test/**/*.ts | tap-spec",
     "coverage": "nyc report",
     "coverage:html": "nyc report --reporter=lcov",
     "clean": "rimraf dist coverage .nyc_output"
