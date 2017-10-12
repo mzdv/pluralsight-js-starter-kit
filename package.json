@@ -5,15 +5,16 @@
   "main": "src/index.js",
   "scripts": {
     "prestart": "npm run clean",
-    "start": "npm-run-all security-check compile lint test run",
+    "start": "npm-run-all security-check build lint test run",
     "run": "node dist/src/index.js",
     "lint": "esw src",
     "lint:watch": "npm run lint -- --watch",
     "security-check": "nsp check",
     "expose": "lt --port 3000",
-    "compile": "npm-run-all compile:typescript compile:cleanup",
-    "compile:cleanup": "rimraf dist/test",
-    "compile:typescript": "tsc",
+    "build": "npm-run-all build:typescript build:cleanup",
+    "build:cleanup": "rimraf dist/test",
+    "build:typescript": "tsc",
+    "postbuild": "browserify-glob -p [ browserify-resolutions '*' ] -t uglifyify dist/src/**/*.js > dist/bundle.js",
     "test": "nyc --require ts-node/register tape test/**/*.ts | tap-spec",
     "test:watch": "tape-watch --require ts-node/register test/**/*.ts | tap-spec",
     "coverage": "nyc report",
@@ -36,6 +37,9 @@
   "homepage": "https://github.com/mzdv/pluralsight-js-starter-kit#readme",
   "devDependencies": {
     "@types/tape": "^4.2.30",
+    "browserify": "^14.4.0",
+    "browserify-glob": "^0.2.0",
+    "browserify-resolutions": "^1.1.0",
     "eslint": "^4.8.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",
@@ -54,7 +58,8 @@
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
     "typescript": "^2.5.3",
-    "typescript-eslint-parser": "^8.0.0"
+    "typescript-eslint-parser": "^8.0.0",
+    "uglifyify": "^4.0.4"
   },
   "dependencies": {},
   "nyc": {
