@@ -4,10 +4,10 @@
   "description": "Pluralsight course JS starter kit",
   "main": "src/index.js",
   "scripts": {
-    "prestart": "node buildHarness/prestart.js",
-    "run": "node dist/index.js",
+    "prestart": "npm run clean",
+    "run": "node dist/src/index.js",
     "start": "npm-run-all security-check compile lint test run",
-    "lint": "esw src buildHarness",
+    "lint": "esw src",
     "lint:watch": "npm run lint -- --watch",
     "security-check": "nsp check",
     "expose": "lt --port 3000",
@@ -36,7 +36,6 @@
   "homepage": "https://github.com/mzdv/pluralsight-js-starter-kit#readme",
   "devDependencies": {
     "@types/tape": "^4.2.30",
-    "chalk": "^2.1.0",
     "eslint": "^4.8.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",
