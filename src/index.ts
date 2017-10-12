@@ -1,3 +1,3 @@
-export function testFunction(number: Number): Number {
+export function testFunction(number: number): number {
   return number;
 }

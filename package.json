@@ -15,6 +15,7 @@
     "compile": "npm-run-all compile:typescript compile:cleanup",
     "compile:cleanup": "rimraf dist/test",
     "test": "nyc --require ts-node/register tape test/**/*.ts | tap-spec",
+    "test:watch": "nyc --require ts-node/register tape-watch test/**/*.ts | tap-spec",
     "coverage": "nyc report",
     "coverage:html": "nyc report --reporter=lcov",
     "clean": "rimraf dist coverage .nyc_output"
@@ -48,7 +49,6 @@
     "nsp": "^2.8.1",
     "nyc": "^11.2.1",
     "rimraf": "^2.6.2",
-    "tap-nyan": "^1.1.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.8.0",
     "tape-watch": "^2.3.0",
